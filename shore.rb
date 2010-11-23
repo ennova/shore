@@ -27,6 +27,10 @@ class Shore < Sinatra::Application
     "http://#{request.env['HTTP_HOST']}/#{entry.slug}"
   end
 
+  get '/stylesheet.css' do
+    scss :stylesheet
+  end
+
   get '/:slug' do
     if entry = Entry.get(params[:slug])
       redirect entry.target, 301

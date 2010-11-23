@@ -2,5 +2,15 @@
 %html
   %head
     %title Shore.
+    %link{:href => '/stylesheet.css', :rel => 'stylesheet', :type => 'text/css', :media => 'all'}
   %body
-    = yield
+    %header
+      %h1
+        %a{:href => 'http://github.com/Ennova/shore'} Shore.
+      %h2 The infinite URL shortener.
+    %section
+      = yield
+    %footer
+      Built by
+      %a{:href => 'http://ennova.com.au'} Ennova
+      \- Engineering Innovation.
