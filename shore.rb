@@ -13,7 +13,10 @@ class Shore < Sinatra::Application
   end
 
   get '/:slug' do
-    params[:slug]
-    not_found(haml :'404')
+    if entry = Entry.get(params[:slug])
+      redirect entry.target, 301
+    else
+      not_found(haml :'404')
+    end
   end
 end
