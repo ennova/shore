@@ -9,3 +9,7 @@ namespace :db do
     DataMapper.auto_upgrade!
   end
 end
+
+task :console do
+  exec 'irb -I. -renvironment'
+end
