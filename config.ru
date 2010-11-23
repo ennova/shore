@@ -1,7 +1,4 @@
-require 'rubygems'
-require 'bundler'
-
-Bundler.require
-
-require './shore'
+$: << File.dirname(__FILE__)
+require 'environment'
+require 'shore'
 run Shore
