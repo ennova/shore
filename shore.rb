@@ -1,5 +1,6 @@
 class Shore < Sinatra::Application
   set :haml, :format => :html5
+  set :public, 'public'
   set :views, 'views'
 
   helpers do
