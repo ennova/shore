@@ -7,7 +7,9 @@ class Shore < Sinatra::Application
   end
 
   get '/shorten' do
-    url = params[:url]
+    entry = Entry.shorten! params[:url]
+    content_type 'text/plain', :charset => 'utf-8'
+    "http://#{request.env['HTTP_HOST']}/#{entry.slug}"
   end
 
   get '/:slug' do
