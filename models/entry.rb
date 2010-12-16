@@ -7,7 +7,7 @@ class Entry
   property :target, String,
   :unique => true,
   :required => true,
-  :format => :url,
+  :format => /(^$)|(^(http|https):\/\/[a-z0-9]+([\-\.]{1}[a-z0-9]+)*((\:[0-9]{1,5})?\/?.*)?$)/ix,
   :length => 1..1024
   property :created_at, DateTime
   property :updated_at, DateTime
